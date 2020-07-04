@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+        
+        .open-button {
+          background-color:blue;
+          border-radius: 10px;
+          color: white;
+          padding: 16px 20px;
+          border: none;
+          cursor: pointer;
+          opacity: 0.8;
+          position: fixed;
+          top: 10px;
+          right: 28px;
+          width: 280px;
+        }
+        
+        .form-popup {
+          display: none;
+          position: fixed;
+          top: 30;
+          right: 15px;
+          border: 3px solid #f1f1f1;
+          z-index: 9;
+        }
+        
+        .form-container {
+          max-width: 300px;
+          padding: 10px;
+          background-color: white;
+        }
+        
+        .form-container input[type=text], .form-container input[type=password] {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          border: none;
+          background: #f1f1f1;
+        }
+        
+        .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+          background-color: #ddd;
+          outline: none;
+        }
+     
+        .form-container .btn {
+          background-color: #4CAF50;
+          color: white;
+          padding: 16px 20px;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          margin-bottom:10px;
+          opacity: 0.8;
+        }
+    
+        .form-container .cancel {
+          background-color: red;
+        }
+        
+        .form-container .btn:hover, .open-button:hover {
+          opacity: 1;
+        }
+        </style>
+</head>
+<body style="background-color: blueviolet;">
+
+    
+<!-- ki --------------------------------------------------------------------->
+<button class="open-button" onclick="openForm()">Create PlayList</button>
+<div class="form-popup" id="myForm">
+    <div class="form-container" id="forms">
+        <label for="name"><b>PlayList Name</b></label>
+        <input type="text" value="" id="name" placeholder="Enter PlayList" name="name" required>
+        <label for="genre"><b>Genre</b></label>
+        <select name="genre" id="genre" value="Romantic">
+            <option value="Romantic">Romantic</option>
+            <option value="Party">Party</option>
+            <option value="HipHop">HipHop</option>
+            <option value="Bhakti">Bhakti</option>
+          </select>
+        <button type="submit" class="btn" onclick="passData()">Create</button>
+    </div>
+    <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+    </script>
+</div>
+    
+    
+
+    <br>
+    <br>
+    <button style="width: 130px;" type="submit"class ="btn btn-primary btnCenter" onclick="playlist()">Playlist</button>
+
+    
+    <div id="playlist">
+        <!-- <h3>dummy</h3> -->
+    </div>
+    <br>
+    <div id="songlist">
+
+    </div>
+
+    <br>
+    <h3 id="addsongs"></h3>
+    <br>
+    <div id="options">
+        
+    </div>
+    <br>
+    <br>
+
+<!---------------------------------------------------------------------------->
+    <div id="div1">
+    <audio id="audio" style="width: 100%;background-color: blue;">
+
+    </audio>
+    </div>
+   <br>
+   <br>
+   <div>
+   <input type="text" value="" id="search" placeholder="seach songs"></input>
+   <button type="submit" class="btn btn-primary btnCenter" onclick="songData()">Search</button>
+   </div>
+   <br>
+   <br>
+
+   <div>
+   <input type="text" id="playlists" value="" id="search" placeholder="search playlist"></input>
+   <button class="btn btn-primary btnCenter" style="width: 80px;margin-top: -4px;
+   height: 30px;" onclick="search_playlist()" value="Search">Search</button>
+   </div>
+   <br>
+   <br>
+   
+
+    </div>
+    <button style="width: 130px;" class="btn btn-primary btnCenter" id="songs" onclick="user2.display_songs_list()">Songs List</button>
+    <div id="display">
+
+    </div>
+    <br>
+    <br>
+    
+    
+
+    <div id="playlist2">
+
+    </div>
+    
+    <script src="music.js"></script>
+
+</body>
+</html>
